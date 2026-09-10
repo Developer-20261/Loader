@@ -1,5 +1,5 @@
 --[[\
-  JOSHBNS SIDEBAR UI - STANDARD PC VERSION
+  JOSHBNS SIDEBAR UI - INTEGRATED SCRIPT HUB (RAINBOW EDITION)
 --]]
 
 local CoreGui = game:GetService("CoreGui")
@@ -28,14 +28,9 @@ else
     end
 end
 
--- Standard PC Sizing
-local uiWidth = 620
-local uiHeight = 420
-local sidebarWidth = 160
-
 local MainFrame = Instance.new("Frame")
-MainFrame.Size = UDim2.fromOffset(uiWidth, uiHeight)
-MainFrame.Position = UDim2.new(0.5, -uiWidth / 2, 0.5, -uiHeight / 2)
+MainFrame.Size = UDim2.fromOffset(720, 500)
+MainFrame.Position = UDim2.new(0.5, -360, 0.5, -250)
 MainFrame.BackgroundColor3 = Color3.fromRGB(18, 22, 28)
 MainFrame.BorderSizePixel = 0
 MainFrame.Active = true
@@ -53,17 +48,17 @@ UIStroke.Thickness = 1.8
 UIStroke.Parent = MainFrame
 
 local TitleBar = Instance.new("Frame")
-TitleBar.Size = UDim2.new(1, 0, 0, 36)
+TitleBar.Size = UDim2.new(1, 0, 0, 38)
 TitleBar.BackgroundColor3 = Color3.fromRGB(14, 17, 22)
 TitleBar.BorderSizePixel = 0
 TitleBar.Parent = MainFrame
 
 local TitleText = Instance.new("TextLabel")
-TitleText.Size = UDim2.new(1, -70, 1, 0)
-TitleText.Position = UDim2.new(0, 12, 0, 0)
+TitleText.Size = UDim2.new(1, -60, 1, 0)
+TitleText.Position = UDim2.new(0, 14, 0, 0)
 TitleText.BackgroundTransparency = 1
 TitleText.TextColor3 = Color3.fromRGB(255, 255, 255)
-TitleText.Text = "JOSHBNS | PC EDITION V1.7.17"
+TitleText.Text = "JOSHBNS | PREMIUM V1.7.17"
 TitleText.Font = Enum.Font.FredokaOne
 TitleText.TextSize = 13
 TitleText.TextXAlignment = Enum.TextXAlignment.Left
@@ -76,7 +71,7 @@ CloseBtn.BackgroundTransparency = 1
 CloseBtn.TextColor3 = Color3.fromRGB(160, 170, 185)
 CloseBtn.Text = "✕"
 CloseBtn.Font = Enum.Font.GothamBold
-CloseBtn.TextSize = 13
+CloseBtn.TextSize = 14
 CloseBtn.Parent = TitleBar
 
 local MinimizeBtn = Instance.new("TextButton")
@@ -86,11 +81,11 @@ MinimizeBtn.BackgroundTransparency = 1
 MinimizeBtn.TextColor3 = Color3.fromRGB(160, 170, 185)
 MinimizeBtn.Text = "-"
 MinimizeBtn.Font = Enum.Font.GothamBold
-MinimizeBtn.TextSize = 15
+MinimizeBtn.TextSize = 16
 MinimizeBtn.Parent = TitleBar
 
 local ToggleButton = Instance.new("TextButton")
-ToggleButton.Size = UDim2.fromOffset(48, 48)
+ToggleButton.Size = UDim2.fromOffset(46, 46)
 ToggleButton.Position = UDim2.new(0.02, 0, 0.35, 0)
 ToggleButton.BackgroundColor3 = Color3.fromRGB(18, 22, 28)
 ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -111,45 +106,45 @@ ToggleStroke.Color = Color3.fromRGB(255, 255, 255)
 ToggleStroke.Thickness = 1.8
 ToggleStroke.Parent = ToggleButton
 
-local footerHeight = 36
 local Sidebar = Instance.new("Frame")
-Sidebar.Size = UDim2.new(0, sidebarWidth, 1, -(TitleBar.Size.Y.Offset + footerHeight))
-Sidebar.Position = UDim2.new(0, 0, 0, TitleBar.Size.Y.Offset)
+Sidebar.Size = UDim2.new(0, 180, 1, -78)
+Sidebar.Position = UDim2.new(0, 0, 0, 38)
 Sidebar.BackgroundColor3 = Color3.fromRGB(15, 19, 25)
 Sidebar.BorderSizePixel = 0
 Sidebar.Parent = MainFrame
 
 local SidebarLayout = Instance.new("UIListLayout")
 SidebarLayout.SortOrder = Enum.SortOrder.LayoutOrder
-SidebarLayout.Padding = UDim.new(0, 4)
+SidebarLayout.Padding = UDim.new(0, 6)
 SidebarLayout.Parent = Sidebar
 
 local SidebarPadding = Instance.new("UIPadding")
-SidebarPadding.PaddingTop = UDim.new(0, 8)
-SidebarPadding.PaddingLeft = UDim.new(0, 6)
-SidebarPadding.PaddingRight = UDim.new(0, 6)
+SidebarPadding.PaddingTop = UDim.new(0, 10)
+SidebarPadding.PaddingLeft = UDim.new(0, 8)
+SidebarPadding.PaddingRight = UDim.new(0, 8)
 SidebarPadding.Parent = Sidebar
 
 local ContentContainer = Instance.new("Frame")
-ContentContainer.Size = UDim2.new(1, -sidebarWidth, 1, -(TitleBar.Size.Y.Offset + footerHeight))
-ContentContainer.Position = UDim2.new(0, sidebarWidth, 0, TitleBar.Size.Y.Offset)
+ContentContainer.Size = UDim2.new(1, -180, 1, -78)
+ContentContainer.Position = UDim2.new(0, 180, 0, 38)
 ContentContainer.BackgroundTransparency = 1
 ContentContainer.Parent = MainFrame
 
 local StatusLabel = Instance.new("TextLabel")
-StatusLabel.Size = UDim2.new(1, 0, 0, footerHeight)
-StatusLabel.Position = UDim2.new(0, 0, 1, -footerHeight)
+StatusLabel.Size = UDim2.new(1, 0, 0, 40)
+StatusLabel.Position = UDim2.new(0, 0, 1, 0)
 StatusLabel.BackgroundColor3 = Color3.fromRGB(14, 17, 22)
 StatusLabel.TextColor3 = Color3.fromRGB(180, 180, 190)
-StatusLabel.Text = "STATUS: READY (PC MODE)"
+StatusLabel.Text = "STATUS: READY"
 StatusLabel.Font = Enum.Font.GothamBold
-StatusLabel.TextSize = 10
+StatusLabel.TextSize = 11
 StatusLabel.Parent = MainFrame
 
 local StatusPadding = Instance.new("UIPadding")
-StatusPadding.PaddingLeft = UDim.new(0, 10)
+StatusPadding.PaddingLeft = UDim.new(0, 14)
 StatusPadding.Parent = StatusLabel
 
+-- Rainbow Animation Loop for Strokes and Highlights
 RunService.RenderStepped:Connect(function()
     local hue = tick() % 5 / 5
     local rainbowColor = Color3.fromHSV(hue, 1, 1)
@@ -166,7 +161,7 @@ local activeTab = nil
 
 local function createTab(name, layoutOrder)
     local TabButton = Instance.new("TextButton")
-    TabButton.Size = UDim2.new(1, 0, 0, 38)
+    TabButton.Size = UDim2.new(1, 0, 0, 40)
     TabButton.BackgroundColor3 = Color3.fromRGB(15, 19, 25)
     TabButton.TextColor3 = Color3.fromRGB(140, 150, 165)
     TabButton.Text = "  " .. name
@@ -185,19 +180,19 @@ local function createTab(name, layoutOrder)
     Page.BackgroundTransparency = 1
     Page.BorderSizePixel = 0
     Page.CanvasSize = UDim2.new(0, 0, 0, 0)
-    Page.ScrollBarThickness = 3
+    Page.ScrollBarThickness = 4
     Page.Visible = false
     Page.Parent = ContentContainer
 
     local PageLayout = Instance.new("UIListLayout")
     PageLayout.SortOrder = Enum.SortOrder.LayoutOrder
-    PageLayout.Padding = UDim.new(0, 6)
+    PageLayout.Padding = UDim.new(0, 8)
     PageLayout.Parent = Page
 
     local PagePadding = Instance.new("UIPadding")
-    PagePadding.PaddingTop = UDim.new(0, 10)
-    PagePadding.PaddingLeft = UDim.new(0, 10)
-    PagePadding.PaddingRight = UDim.new(0, 10)
+    PagePadding.PaddingTop = UDim.new(0, 14)
+    PagePadding.PaddingLeft = UDim.new(0, 14)
+    PagePadding.PaddingRight = UDim.new(0, 14)
     PagePadding.Parent = Page
 
     TabButton.MouseButton1Click:Connect(function()
@@ -225,40 +220,39 @@ local function createTab(name, layoutOrder)
 end
 
 local KeylessScroll = createTab("ALL KEYLESS", 1)
-KeylessScroll.CanvasSize = UDim2.new(0, 0, 0, 560)
+KeylessScroll.CanvasSize = UDim2.new(0, 0, 0, 700)
 
 local WithKeyScroll = createTab("NEED KEY", 2)
-WithKeyScroll.CanvasSize = UDim2.new(0, 0, 0, 480)
+WithKeyScroll.CanvasSize = UDim2.new(0, 0, 0, 600)
 
 local ShaderScroll = createTab("SHADER", 3)
-ShaderScroll.CanvasSize = UDim2.new(0, 0, 0, 160)
+ShaderScroll.CanvasSize = UDim2.new(0, 0, 0, 200)
 
 local PingLaggerScroll = createTab("PING LAGGER", 4)
-PingLaggerScroll.CanvasSize = UDim2.new(0, 0, 0, 160)
+PingLaggerScroll.CanvasSize = UDim2.new(0, 0, 0, 200)
 
 local AnimationScroll = createTab("ANIMATION/EMOTE", 5)
-AnimationScroll.CanvasSize = UDim2.new(0, 0, 0, 120)
+AnimationScroll.CanvasSize = UDim2.new(0, 0, 0, 140)
 
 local function addButton(parent, name, color, callback)
-    local btnHeight = 38
     local Btn = Instance.new("TextButton")
-    Btn.Size = UDim2.new(1, 0, 0, btnHeight)
+    Btn.Size = UDim2.new(1, 0, 0, 40)
     Btn.BackgroundColor3 = color
     Btn.TextColor3 = Color3.fromRGB(255, 255, 255)
     Btn.Text = name
     Btn.Font = Enum.Font.GothamBold
-    Btn.TextSize = 11
+    Btn.TextSize = 12
     Btn.Parent = parent
     
     local Corner = Instance.new("UICorner")
-    Corner.CornerRadius = UDim.new(0, 5)
+    Corner.CornerRadius = UDim.new(0, 6)
     Corner.Parent = Btn
     
     Btn.MouseButton1Click:Connect(function()
         local tweenInfo = TweenInfo.new(0.06, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-        TweenService:Create(Btn, tweenInfo, {Size = UDim2.new(0.97, 0, 0, btnHeight - 4)}):Play()
+        TweenService:Create(Btn, tweenInfo, {Size = UDim2.new(0.97, 0, 0, 36)}):Play()
         task.wait(0.06)
-        TweenService:Create(Btn, tweenInfo, {Size = UDim2.new(1, 0, 0, btnHeight)}):Play()
+        TweenService:Create(Btn, tweenInfo, {Size = UDim2.new(1, 0, 0, 40)}):Play()
         pcall(callback)
     end)
 end
@@ -494,7 +488,7 @@ end)
 addButton(PingLaggerScroll, "RIFT LAGGER V1 KEYLESS", Color3.fromRGB(220, 70, 70), function()
     StatusLabel.Text = "STATUS: EXECUTING RIFT LAGGER V1..."
     task.spawn(function()
-        getgenv().script_key = "trial"
+        script_key = "trial"
         local s = pcall(function() loadstring(game:HttpGet("https://api.getpolsec.com/scripts/hosted/54a45ce90e56387bfc6957d4ff82ef9602ad501d94be449722c82047286265a2.lua"))() end)
         StatusLabel.Text = s and "STATUS: RIFT LAGGER V1 LOADED SUCCESSFULLY!" or "STATUS: EXECUTION FAILED"
     end)
@@ -503,7 +497,7 @@ end)
 addButton(PingLaggerScroll, "RIFT LAGGER V2 KEYLESS", Color3.fromRGB(70, 130, 220), function()
     StatusLabel.Text = "STATUS: EXECUTING RIFT LAGGER V2..."
     task.spawn(function()
-        getgenv().script_key = "trial"
+        script_key = "trial"
         local s = pcall(function() loadstring(game:HttpGet("https://api.getpolsec.com/scripts/hosted/bdfe11b74cf289f8e42386e53965f1d9bbd24f7d0f3d353df2315487c90fd2d3.lua"))() end)
         StatusLabel.Text = s and "STATUS: RIFT LAGGER V2 LOADED SUCCESSFULLY!" or "STATUS: EXECUTION FAILED"
     end)
