@@ -29,8 +29,8 @@ else
 end
 
 local MainFrame = Instance.new("Frame")
-MainFrame.Size = UDim2.fromOffset(720, 500)
-MainFrame.Position = UDim2.new(0.5, -360, 0.5, -250)
+MainFrame.Size = UDim2.fromOffset(520, 360)
+MainFrame.Position = UDim2.new(0.5, -260, 0.5, -180)
 MainFrame.BackgroundColor3 = Color3.fromRGB(18, 22, 28)
 MainFrame.BorderSizePixel = 0
 MainFrame.Active = true
@@ -48,50 +48,50 @@ UIStroke.Thickness = 1.8
 UIStroke.Parent = MainFrame
 
 local TitleBar = Instance.new("Frame")
-TitleBar.Size = UDim2.new(1, 0, 0, 38)
+TitleBar.Size = UDim2.new(1, 0, 0, 32)
 TitleBar.BackgroundColor3 = Color3.fromRGB(14, 17, 22)
 TitleBar.BorderSizePixel = 0
 TitleBar.Parent = MainFrame
 
 local TitleText = Instance.new("TextLabel")
 TitleText.Size = UDim2.new(1, -60, 1, 0)
-TitleText.Position = UDim2.new(0, 14, 0, 0)
+TitleText.Position = UDim2.new(0, 12, 0, 0)
 TitleText.BackgroundTransparency = 1
 TitleText.TextColor3 = Color3.fromRGB(255, 255, 255)
 TitleText.Text = "JOSHBNS | PREMIUM V1.7.17"
 TitleText.Font = Enum.Font.FredokaOne
-TitleText.TextSize = 13
+TitleText.TextSize = 11
 TitleText.TextXAlignment = Enum.TextXAlignment.Left
 TitleText.Parent = TitleBar
 
 local CloseBtn = Instance.new("TextButton")
-CloseBtn.Size = UDim2.fromOffset(28, 28)
-CloseBtn.Position = UDim2.new(1, -32, 0.5, -14)
+CloseBtn.Size = UDim2.fromOffset(24, 24)
+CloseBtn.Position = UDim2.new(1, -28, 0.5, -12)
 CloseBtn.BackgroundTransparency = 1
 CloseBtn.TextColor3 = Color3.fromRGB(160, 170, 185)
 CloseBtn.Text = "✕"
 CloseBtn.Font = Enum.Font.GothamBold
-CloseBtn.TextSize = 14
+CloseBtn.TextSize = 12
 CloseBtn.Parent = TitleBar
 
 local MinimizeBtn = Instance.new("TextButton")
-MinimizeBtn.Size = UDim2.fromOffset(28, 28)
-MinimizeBtn.Position = UDim2.new(1, -64, 0.5, -14)
+MinimizeBtn.Size = UDim2.fromOffset(24, 24)
+MinimizeBtn.Position = UDim2.new(1, -56, 0.5, -12)
 MinimizeBtn.BackgroundTransparency = 1
 MinimizeBtn.TextColor3 = Color3.fromRGB(160, 170, 185)
 MinimizeBtn.Text = "-"
 MinimizeBtn.Font = Enum.Font.GothamBold
-MinimizeBtn.TextSize = 16
+MinimizeBtn.TextSize = 14
 MinimizeBtn.Parent = TitleBar
 
 local ToggleButton = Instance.new("TextButton")
-ToggleButton.Size = UDim2.fromOffset(46, 46)
+ToggleButton.Size = UDim2.fromOffset(42, 42)
 ToggleButton.Position = UDim2.new(0.02, 0, 0.35, 0)
 ToggleButton.BackgroundColor3 = Color3.fromRGB(18, 22, 28)
 ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton.Text = "J"
 ToggleButton.Font = Enum.Font.FredokaOne
-ToggleButton.TextSize = 20
+ToggleButton.TextSize = 18
 ToggleButton.Visible = false
 ToggleButton.Active = true
 ToggleButton.Draggable = true
@@ -107,41 +107,41 @@ ToggleStroke.Thickness = 1.8
 ToggleStroke.Parent = ToggleButton
 
 local Sidebar = Instance.new("Frame")
-Sidebar.Size = UDim2.new(0, 180, 1, -78)
-Sidebar.Position = UDim2.new(0, 0, 0, 38)
+Sidebar.Size = UDim2.new(0, 140, 1, -68)
+Sidebar.Position = UDim2.new(0, 0, 0, 32)
 Sidebar.BackgroundColor3 = Color3.fromRGB(15, 19, 25)
 Sidebar.BorderSizePixel = 0
 Sidebar.Parent = MainFrame
 
 local SidebarLayout = Instance.new("UIListLayout")
 SidebarLayout.SortOrder = Enum.SortOrder.LayoutOrder
-SidebarLayout.Padding = UDim.new(0, 6)
+SidebarLayout.Padding = UDim.new(0, 4)
 SidebarLayout.Parent = Sidebar
 
 local SidebarPadding = Instance.new("UIPadding")
-SidebarPadding.PaddingTop = UDim.new(0, 10)
-SidebarPadding.PaddingLeft = UDim.new(0, 8)
-SidebarPadding.PaddingRight = UDim.new(0, 8)
+SidebarPadding.PaddingTop = UDim.new(0, 8)
+SidebarPadding.PaddingLeft = UDim.new(0, 6)
+SidebarPadding.PaddingRight = UDim.new(0, 6)
 SidebarPadding.Parent = Sidebar
 
 local ContentContainer = Instance.new("Frame")
-ContentContainer.Size = UDim2.new(1, -180, 1, -78)
-ContentContainer.Position = UDim2.new(0, 180, 0, 38)
+ContentContainer.Size = UDim2.new(1, -140, 1, -68)
+ContentContainer.Position = UDim2.new(0, 140, 0, 32)
 ContentContainer.BackgroundTransparency = 1
 ContentContainer.Parent = MainFrame
 
 local StatusLabel = Instance.new("TextLabel")
-StatusLabel.Size = UDim2.new(1, 0, 0, 40)
+StatusLabel.Size = UDim2.new(1, 0, 0, 36)
 StatusLabel.Position = UDim2.new(0, 0, 1, 0)
 StatusLabel.BackgroundColor3 = Color3.fromRGB(14, 17, 22)
 StatusLabel.TextColor3 = Color3.fromRGB(180, 180, 190)
 StatusLabel.Text = "STATUS: READY"
 StatusLabel.Font = Enum.Font.GothamBold
-StatusLabel.TextSize = 11
+StatusLabel.TextSize = 9
 StatusLabel.Parent = MainFrame
 
 local StatusPadding = Instance.new("UIPadding")
-StatusPadding.PaddingLeft = UDim.new(0, 14)
+StatusPadding.PaddingLeft = UDim.new(0, 10)
 StatusPadding.Parent = StatusLabel
 
 -- Rainbow Animation Loop for Strokes and Highlights
@@ -161,12 +161,12 @@ local activeTab = nil
 
 local function createTab(name, layoutOrder)
     local TabButton = Instance.new("TextButton")
-    TabButton.Size = UDim2.new(1, 0, 0, 40)
+    TabButton.Size = UDim2.new(1, 0, 0, 34)
     TabButton.BackgroundColor3 = Color3.fromRGB(15, 19, 25)
     TabButton.TextColor3 = Color3.fromRGB(140, 150, 165)
     TabButton.Text = "  " .. name
     TabButton.Font = Enum.Font.GothamMedium
-    TabButton.TextSize = 12
+    TabButton.TextSize = 11
     TabButton.TextXAlignment = Enum.TextXAlignment.Left
     TabButton.LayoutOrder = layoutOrder
     TabButton.Parent = Sidebar
@@ -180,19 +180,19 @@ local function createTab(name, layoutOrder)
     Page.BackgroundTransparency = 1
     Page.BorderSizePixel = 0
     Page.CanvasSize = UDim2.new(0, 0, 0, 0)
-    Page.ScrollBarThickness = 4
+    Page.ScrollBarThickness = 3
     Page.Visible = false
     Page.Parent = ContentContainer
 
     local PageLayout = Instance.new("UIListLayout")
     PageLayout.SortOrder = Enum.SortOrder.LayoutOrder
-    PageLayout.Padding = UDim.new(0, 8)
+    PageLayout.Padding = UDim.new(0, 6)
     PageLayout.Parent = Page
 
     local PagePadding = Instance.new("UIPadding")
-    PagePadding.PaddingTop = UDim.new(0, 14)
-    PagePadding.PaddingLeft = UDim.new(0, 14)
-    PagePadding.PaddingRight = UDim.new(0, 14)
+    PagePadding.PaddingTop = UDim.new(0, 10)
+    PagePadding.PaddingLeft = UDim.new(0, 10)
+    PagePadding.PaddingRight = UDim.new(0, 10)
     PagePadding.Parent = Page
 
     TabButton.MouseButton1Click:Connect(function()
@@ -220,44 +220,60 @@ local function createTab(name, layoutOrder)
 end
 
 local KeylessScroll = createTab("ALL KEYLESS", 1)
-KeylessScroll.CanvasSize = UDim2.new(0, 0, 0, 700)
+KeylessScroll.CanvasSize = UDim2.new(0, 0, 0, 640)
 
 local WithKeyScroll = createTab("NEED KEY", 2)
-WithKeyScroll.CanvasSize = UDim2.new(0, 0, 0, 600)
+WithKeyScroll.CanvasSize = UDim2.new(0, 0, 0, 480)
 
 local ShaderScroll = createTab("SHADER", 3)
-ShaderScroll.CanvasSize = UDim2.new(0, 0, 0, 200)
+ShaderScroll.CanvasSize = UDim2.new(0, 0, 0, 160)
 
 local PingLaggerScroll = createTab("PING LAGGER", 4)
-PingLaggerScroll.CanvasSize = UDim2.new(0, 0, 0, 200)
+PingLaggerScroll.CanvasSize = UDim2.new(0, 0, 0, 160)
 
 local AnimationScroll = createTab("ANIMATION/EMOTE", 5)
-AnimationScroll.CanvasSize = UDim2.new(0, 0, 0, 140)
+AnimationScroll.CanvasSize = UDim2.new(0, 0, 0, 120)
 
 local function addButton(parent, name, color, callback)
     local Btn = Instance.new("TextButton")
-    Btn.Size = UDim2.new(1, 0, 0, 40)
+    Btn.Size = UDim2.new(1, 0, 0, 34)
     Btn.BackgroundColor3 = color
     Btn.TextColor3 = Color3.fromRGB(255, 255, 255)
     Btn.Text = name
     Btn.Font = Enum.Font.GothamBold
-    Btn.TextSize = 12
+    Btn.TextSize = 10
     Btn.Parent = parent
     
     local Corner = Instance.new("UICorner")
-    Corner.CornerRadius = UDim.new(0, 6)
+    Corner.CornerRadius = UDim.new(0, 5)
     Corner.Parent = Btn
     
     Btn.MouseButton1Click:Connect(function()
         local tweenInfo = TweenInfo.new(0.06, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-        TweenService:Create(Btn, tweenInfo, {Size = UDim2.new(0.97, 0, 0, 36)}):Play()
+        TweenService:Create(Btn, tweenInfo, {Size = UDim2.new(0.97, 0, 0, 30)}):Play()
         task.wait(0.06)
-        TweenService:Create(Btn, tweenInfo, {Size = UDim2.new(1, 0, 0, 40)}):Play()
+        TweenService:Create(Btn, tweenInfo, {Size = UDim2.new(1, 0, 0, 34)}):Play()
         pcall(callback)
     end)
 end
 
 -- Keyless Scripts
+addButton(KeylessScroll, "BLYXO KEYLESS", Color3.fromRGB(60, 140, 240), function()
+    StatusLabel.Text = "STATUS: EXECUTING BLYXO KEYLESS..."
+    task.spawn(function()
+        local s = pcall(function() loadstring(game:HttpGet("https://flowauth.net/v1/loaders/69d3463240384f3a73fbe32c178093a2.lua"))() end)
+        StatusLabel.Text = s and "STATUS: BLYXO LOADED SUCCESSFULLY!" or "STATUS: EXECUTION FAILED"
+    end)
+end)
+
+addButton(KeylessScroll, "LKZ KEYLESS", Color3.fromRGB(110, 70, 220), function()
+    StatusLabel.Text = "STATUS: EXECUTING LKZ KEYLESS..."
+    task.spawn(function()
+        local s = pcall(function() loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/65bf3459d87ba3ac46350e154b640929.lua"))() end)
+        StatusLabel.Text = s and "STATUS: LKZ LOADED SUCCESSFULLY!" or "STATUS: EXECUTION FAILED"
+    end)
+end)
+
 addButton(KeylessScroll, "LOAD ON HUB KEYLESS", Color3.fromRGB(255, 140, 0), function()
     StatusLabel.Text = "STATUS: EXECUTING ON HUB..."
     task.spawn(function()
@@ -335,6 +351,14 @@ addButton(KeylessScroll, "LOAD FAKE ADMIN KEYLESS", Color3.fromRGB(150, 80, 220)
     task.spawn(function()
         local s = pcall(function() loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/bf2eaf16a19664e333889d0b779b8a89.lua"))() end)
         StatusLabel.Text = s and "STATUS: FAKE ADMIN LOADED SUCCESSFULLY!" or "STATUS: EXECUTION FAILED"
+    end)
+end)
+
+addButton(KeylessScroll, "pet Spawner", Color3.fromRGB(190, 120, 50), function()
+    StatusLabel.Text = "STATUS: EXECUTING PET SPAWNER..."
+    task.spawn(function()
+        local s = pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/chocolascript-glitch/Chocola-Pet-Spawner-steal-an-egg/refs/heads/main/script.lua"))() end)
+        StatusLabel.Text = s and "STATUS: PET SPAWNER LOADED SUCCESSFULLY!" or "STATUS: EXECUTION FAILED"
     end)
 end)
 
