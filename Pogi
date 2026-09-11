@@ -1,3 +1,6 @@
+-- Modified cross-platform script to display two lines of text on a solid black screen
+-- Works on both Mobile (CP) and PC
+
 local player = game.Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
@@ -17,7 +20,8 @@ textLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 textLabel.TextScaled = true
 textLabel.Font = Enum.Font.SourceSansBold
-textLabel.Text = "SCRIPT IS UPDATING WAIT FOR NEXT UPDATE"
+textLabel.Text = "SCRIPT IS UPDATING WAIT FOR NEXT UPDATE\nCheck tiktok @joshbnsssnganiiiii"
 textLabel.Parent = screenGui
 
-print("Black screen update displayed successfully!")
+print("Black screen update with TikTok handle displayed successfully!")
+
