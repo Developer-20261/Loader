@@ -1,5 +1,5 @@
 --[[\
-  JOSHBNS SIDEBAR UI - INTEGRATED SCRIPT HUB (RAINBOW EDITION)
+  JOSHBNS SIDEBAR UI - STEAL AN EGG INTEGRATED SCRIPT HUB (RAINBOW EDITION)
 --]]
 
 local CoreGui = game:GetService("CoreGui")
@@ -10,7 +10,7 @@ local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "JOSHBNS_SIDEBAR_UI"
+ScreenGui.Name = "JOSHBNS_STEAL_AN_EGG_HUB"
 ScreenGui.ResetOnSpawn = false
 ScreenGui.DisplayOrder = 999999
 
@@ -28,6 +28,107 @@ else
     end
 end
 
+-- Game Selection Hub Frame
+local GameSelectFrame = Instance.new("Frame")
+GameSelectFrame.Size = UDim2.fromOffset(400, 260)
+GameSelectFrame.Position = UDim2.new(0.5, -200, 0.5, -130)
+GameSelectFrame.BackgroundColor3 = Color3.fromRGB(18, 22, 28)
+GameSelectFrame.BorderSizePixel = 0
+GameSelectFrame.Active = true
+GameSelectFrame.Draggable = true
+GameSelectFrame.Parent = ScreenGui
+
+local SelectCorner = Instance.new("UICorner")
+SelectCorner.CornerRadius = UDim.new(0, 8)
+SelectCorner.Parent = GameSelectFrame
+
+local SelectStroke = Instance.new("UIStroke")
+SelectStroke.Color = Color3.fromRGB(255, 255, 255)
+SelectStroke.Thickness = 1.8
+SelectStroke.Parent = GameSelectFrame
+
+local SelectTitleBar = Instance.new("Frame")
+SelectTitleBar.Size = UDim2.new(1, 0, 0, 32)
+SelectTitleBar.BackgroundColor3 = Color3.fromRGB(14, 17, 22)
+SelectTitleBar.BorderSizePixel = 0
+SelectTitleBar.Parent = GameSelectFrame
+
+local SelectTitleText = Instance.new("TextLabel")
+SelectTitleText.Size = UDim2.new(1, -30, 1, 0)
+SelectTitleText.Position = UDim2.new(0, 12, 0, 0)
+SelectTitleText.BackgroundTransparency = 1
+SelectTitleText.TextColor3 = Color3.fromRGB(255, 255, 255)
+SelectTitleText.Text = "JOSHBNS | SELECT GAME"
+SelectTitleText.Font = Enum.Font.FredokaOne
+SelectTitleText.TextSize = 11
+SelectTitleText.TextXAlignment = Enum.TextXAlignment.Left
+SelectTitleText.Parent = SelectTitleBar
+
+local SelectCloseBtn = Instance.new("TextButton")
+SelectCloseBtn.Size = UDim2.fromOffset(24, 24)
+SelectCloseBtn.Position = UDim2.new(1, -28, 0.5, -12)
+SelectCloseBtn.BackgroundTransparency = 1
+SelectCloseBtn.TextColor3 = Color3.fromRGB(160, 170, 185)
+SelectCloseBtn.Text = "✕"
+SelectCloseBtn.Font = Enum.Font.GothamBold
+SelectCloseBtn.TextSize = 12
+SelectCloseBtn.Parent = SelectTitleBar
+
+SelectCloseBtn.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+end)
+
+local SelectContainer = Instance.new("Frame")
+SelectContainer.Size = UDim2.new(1, -24, 1, -56)
+SelectContainer.Position = UDim2.new(0, 12, 0, 44)
+SelectContainer.BackgroundTransparency = 1
+SelectContainer.Parent = GameSelectFrame
+
+local SelectLayout = Instance.new("UIListLayout")
+SelectLayout.SortOrder = Enum.SortOrder.LayoutOrder
+SelectLayout.Padding = UDim.new(0, 10)
+SelectLayout.Parent = SelectContainer
+
+local StealAnEggCard = Instance.new("TextButton")
+StealAnEggCard.Size = UDim2.new(1, 0, 0, 70)
+StealAnEggCard.BackgroundColor3 = Color3.fromRGB(24, 31, 42)
+StealAnEggCard.TextColor3 = Color3.fromRGB(255, 255, 255)
+StealAnEggCard.Text = ""
+StealAnEggCard.AutoButtonColor = false
+StealAnEggCard.Parent = SelectContainer
+
+local CardCorner = Instance.new("UICorner")
+CardCorner.CornerRadius = UDim.new(0, 6)
+CardCorner.Parent = StealAnEggCard
+
+local CardStroke = Instance.new("UIStroke")
+CardStroke.Color = Color3.fromRGB(60, 140, 240)
+CardStroke.Thickness = 1.2
+CardStroke.Parent = StealAnEggCard
+
+local CardTitle = Instance.new("TextLabel")
+CardTitle.Size = UDim2.new(1, -20, 0, 24)
+CardTitle.Position = UDim2.new(0, 10, 0, 10)
+CardTitle.BackgroundTransparency = 1
+CardTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+CardTitle.Text = "STEAL AN EGG"
+CardTitle.Font = Enum.Font.FredokaOne
+CardTitle.TextSize = 14
+CardTitle.TextXAlignment = Enum.TextXAlignment.Left
+CardTitle.Parent = StealAnEggCard
+
+local CardDesc = Instance.new("TextLabel")
+CardDesc.Size = UDim2.new(1, -20, 0, 20)
+CardDesc.Position = UDim2.new(0, 10, 0, 36)
+CardDesc.BackgroundTransparency = 1
+CardDesc.TextColor3 = Color3.fromRGB(160, 170, 185)
+CardDesc.Text = "Access all keyless scripts, item spawners, shaders, and laggers."
+CardDesc.Font = Enum.Font.GothamMedium
+CardDesc.TextSize = 10
+CardDesc.TextXAlignment = Enum.TextXAlignment.Left
+CardDesc.Parent = StealAnEggCard
+
+-- Main Hub Frame (Hidden until Game Selected)
 local MainFrame = Instance.new("Frame")
 MainFrame.Size = UDim2.fromOffset(520, 360)
 MainFrame.Position = UDim2.new(0.5, -260, 0.5, -180)
@@ -36,6 +137,7 @@ MainFrame.BorderSizePixel = 0
 MainFrame.Active = true
 MainFrame.Draggable = true
 MainFrame.ClipsDescendants = true
+MainFrame.Visible = false
 MainFrame.Parent = ScreenGui
 
 local MainCorner = Instance.new("UICorner")
@@ -58,7 +160,7 @@ TitleText.Size = UDim2.new(1, -60, 1, 0)
 TitleText.Position = UDim2.new(0, 12, 0, 0)
 TitleText.BackgroundTransparency = 1
 TitleText.TextColor3 = Color3.fromRGB(255, 255, 255)
-TitleText.Text = "JOSHBNS | PREMIUM V1.7.17"
+TitleText.Text = "JOSHBNS | PREMIUM v1.8.1.2 STEAL AN EGG HUB"
 TitleText.Font = Enum.Font.FredokaOne
 TitleText.TextSize = 11
 TitleText.TextXAlignment = Enum.TextXAlignment.Left
@@ -151,8 +253,16 @@ RunService.RenderStepped:Connect(function()
     
     UIStroke.Color = rainbowColor
     ToggleStroke.Color = rainbowColor
+    SelectStroke.Color = rainbowColor
     TitleText.TextColor3 = rainbowColor
+    SelectTitleText.TextColor3 = rainbowColor
     ToggleButton.TextColor3 = rainbowColor
+end)
+
+-- Switch from Game Select to Main Sidebar
+StealAnEggCard.MouseButton1Click:Connect(function()
+    GameSelectFrame.Visible = false
+    MainFrame.Visible = true
 end)
 
 local Tabs = {}
@@ -220,7 +330,7 @@ local function createTab(name, layoutOrder)
 end
 
 local KeylessScroll = createTab("ALL KEYLESS", 1)
-KeylessScroll.CanvasSize = UDim2.new(0, 0, 0, 640)
+KeylessScroll.CanvasSize = UDim2.new(0, 0, 0, 680)
 
 local WithKeyScroll = createTab("NEED KEY", 2)
 WithKeyScroll.CanvasSize = UDim2.new(0, 0, 0, 480)
@@ -394,6 +504,15 @@ addButton(KeylessScroll, "LOAD OUROBOROS KEYLESS", Color3.fromRGB(40, 190, 120),
     end)
 end)
 
+addButton(KeylessScroll, "ANTI HIT KEYLESS", Color3.fromRGB(180, 50, 180), function()
+    StatusLabel.Text = "STATUS: EXECUTING ANTI HIT..."
+    task.spawn(function()
+        script_key = "Trial"
+        local s = pcall(function() loadstring(game:HttpGet("https://api.getpolsec.com/scripts/hosted/6582551b42d21c6b7eb55f1d76d8d50ce53cb35592093d6615b5e83437594dc0.lua"))() end)
+        StatusLabel.Text = s and "STATUS: ANTI HIT LOADED SUCCESSFULLY!" or "STATUS: EXECUTION FAILED"
+    end)
+end)
+
 -- With Key Scripts
 addButton(WithKeyScroll, "LOAD FYY WITH KEY", Color3.fromRGB(30, 130, 220), function()
     StatusLabel.Text = "STATUS: EXECUTING FYY HUB..."
@@ -539,6 +658,9 @@ end)
 local function toggleUI()
     if MainFrame.Visible then
         MainFrame.Visible = false
+        ToggleButton.Visible = true
+    elseif GameSelectFrame.Visible then
+        GameSelectFrame.Visible = false
         ToggleButton.Visible = true
     else
         ToggleButton.Visible = false
